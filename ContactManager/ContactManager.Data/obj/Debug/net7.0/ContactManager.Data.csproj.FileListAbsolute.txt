@@ -1,0 +1,15 @@
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\bin\Debug\net7.0\ContactManager.Data.deps.json
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\bin\Debug\net7.0\ContactManager.Data.runtimeconfig.json
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\bin\Debug\net7.0\ContactManager.Data.dll
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\bin\Debug\net7.0\ContactManager.Data.pdb
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\obj\Debug\net7.0\ContactManager.Data.csproj.AssemblyReference.cache
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\obj\Debug\net7.0\ContactManager.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\obj\Debug\net7.0\ContactManager.Data.AssemblyInfoInputs.cache
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\obj\Debug\net7.0\ContactManager.Data.AssemblyInfo.cs
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\obj\Debug\net7.0\ContactManager.Data.csproj.CoreCompileInputs.cache
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\obj\Debug\net7.0\ContactManager.Data.sourcelink.json
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\obj\Debug\net7.0\ContactManager.Data.dll
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\obj\Debug\net7.0\refint\ContactManager.Data.dll
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\obj\Debug\net7.0\ContactManager.Data.pdb
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\obj\Debug\net7.0\ContactManager.Data.genruntimeconfig.cache
+C:\Users\ahmed.000\source\repos\ahmedmsmg\MSVisual-Studio-MVC-Web-App\ContactManager\ContactManager.Data\obj\Debug\net7.0\ref\ContactManager.Data.dll
