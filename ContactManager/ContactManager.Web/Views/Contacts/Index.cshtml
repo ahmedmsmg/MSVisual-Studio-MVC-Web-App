@@ -22,7 +22,7 @@
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address.City)
+                Addresses
             </th>
             <th></th>
         </tr>
@@ -38,7 +38,10 @@
                     @Html.DisplayFor(modelItem => item.LastName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Address.City)
+                    @foreach (var address in item.Addresses)
+                    {
+                        <div>@address.Street, @address.City, @address.State, @address.PostalCode</div>
+                    }
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ContactId">Edit</a> |

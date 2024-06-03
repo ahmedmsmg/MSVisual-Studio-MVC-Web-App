@@ -1,4 +1,4 @@
-﻿@model ContactManager.Data.Models.Contact
+﻿@model ContactManager.Web.ViewModels.ContactViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
@@ -22,26 +22,40 @@
                 <input asp-for="LastName" class="form-control" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Address.Street" class="control-label"></label>
-                <input asp-for="Address.Street" class="form-control" />
-                <span asp-validation-for="Address.Street" class="text-danger"></span>
+
+            <div id="addresses">
+                <h4>Addresses</h4>
+                <hr />
+                @{
+                    var addressIndex = 0;
+                    foreach (var address in Model.Addresses)
+                    {
+                        <div class="form-group address-group">
+                            <label asp-for="Addresses[@addressIndex].Street" class="control-label">Street</label>
+                            <input asp-for="Addresses[@addressIndex].Street" class="form-control" />
+                            <span asp-validation-for="Addresses[@addressIndex].Street" class="text-danger"></span>
+
+                            <label asp-for="Addresses[@addressIndex].City" class="control-label">City</label>
+                            <input asp-for="Addresses[@addressIndex].City" class="form-control" />
+                            <span asp-validation-for="Addresses[@addressIndex].City" class="text-danger"></span>
+
+                            <label asp-for="Addresses[@addressIndex].State" class="control-label">State</label>
+                            <input asp-for="Addresses[@addressIndex].State" class="form-control" />
+                            <span asp-validation-for="Addresses[@addressIndex].State" class="text-danger"></span>
+
+                            <label asp-for="Addresses[@addressIndex].PostalCode" class="control-label">Postal Code</label>
+                            <input asp-for="Addresses[@addressIndex].PostalCode" class="form-control" />
+                            <span asp-validation-for="Addresses[@addressIndex].PostalCode" class="text-danger"></span>
+                        </div>
+                        addressIndex++;
+                    }
+                }
             </div>
+
             <div class="form-group">
-                <label asp-for="Address.City" class="control-label"></label>
-                <input asp-for="Address.City" class="form-control" />
-                <span asp-validation-for="Address.City" class="text-danger"></span>
+                <button type="button" class="btn btn-secondary" onclick="addAddress()">Add Address</button>
             </div>
-            <div class="form-group">
-                <label asp-for="Address.State" class="control-label"></label>
-                <input asp-for="Address.State" class="form-control" />
-                <span asp-validation-for="Address.State" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Address.PostalCode" class="control-label"></label>
-                <input asp-for="Address.PostalCode" class="form-control" />
-                <span asp-validation-for="Address.PostalCode" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -57,4 +71,31 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script>
+        var addressIndex = @Model.Addresses.Count;
+
+        function addAddress() {
+            var newAddressHtml = `
+                        <div class="form-group address-group">
+                            <label for="Addresses_${addressIndex}__Street" class="control-label">Street</label>
+                            <input id="Addresses_${addressIndex}__Street" name="Addresses[${addressIndex}].Street" class="form-control" />
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].Street" data-valmsg-replace="true"></span>
+
+                            <label for="Addresses_${addressIndex}__City" class="control-label">City</label>
+                            <input id="Addresses_${addressIndex}__City" name="Addresses[${addressIndex}].City" class="form-control" />
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].City" data-valmsg-replace="true"></span>
+
+                            <label for="Addresses_${addressIndex}__State" class="control-label">State</label>
+                            <input id="Addresses_${addressIndex}__State" name="Addresses[${addressIndex}].State" class="form-control" />
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].State" data-valmsg-replace="true"></span>
+
+                            <label for="Addresses_${addressIndex}__PostalCode" class="control-label">Postal Code</label>
+                            <input id="Addresses_${addressIndex}__PostalCode" name="Addresses[${addressIndex}].PostalCode" class="form-control" />
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].PostalCode" data-valmsg-replace="true"></span>
+                        </div>
+                    `;
+            $('#addresses').append(newAddressHtml);
+            addressIndex++;
+        }
+    </script>
 }

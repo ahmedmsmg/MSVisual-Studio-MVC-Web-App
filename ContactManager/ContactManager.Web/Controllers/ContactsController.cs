@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ContactManager.Data;
 using ContactManager.Data.Models;
+using ContactManager.Web.ViewModels;
 
 namespace ContactManager.Web.Controllers
 {
@@ -22,21 +23,20 @@ namespace ContactManager.Web.Controllers
         // GET: Contacts
         public async Task<IActionResult> Index(string searchString)
         {
-            var contacts = _context.Contacts.Include(c => c.Address).AsQueryable();
+            var contacts = _context.Contacts.Include(c => c.Addresses).AsQueryable();
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 contacts = contacts.Where(c => c.FirstName.Contains(searchString) ||
                                                c.LastName.Contains(searchString) ||
-                                               c.Address.Street.Contains(searchString) ||
-                                               c.Address.City.Contains(searchString) ||
-                                               c.Address.State.Contains(searchString) ||
-                                               c.Address.PostalCode.Contains(searchString));
+                                               c.Addresses.Any(a => a.Street.Contains(searchString) ||
+                                                                    a.City.Contains(searchString) ||
+                                                                    a.State.Contains(searchString) ||
+                                                                    a.PostalCode.Contains(searchString)));
             }
 
             return View(await contacts.ToListAsync());
         }
-
 
         // GET: Contacts/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -47,7 +47,7 @@ namespace ContactManager.Web.Controllers
             }
 
             var contact = await _context.Contacts
-                .Include(c => c.Address)
+                .Include(c => c.Addresses)
                 .FirstOrDefaultAsync(m => m.ContactId == id);
             if (contact == null)
             {
@@ -60,55 +60,36 @@ namespace ContactManager.Web.Controllers
         // GET: Contacts/Create
         public IActionResult Create()
         {
-            ViewData["AddressId"] = new SelectList(_context.Addresses, "AddressId", "City");
-            return View();
+            var viewModel = new ContactViewModel();
+            return View(viewModel);
         }
 
         // POST: Contacts/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ContactId,FirstName,LastName,Address")] Contact contact)
+        public async Task<IActionResult> Create(ContactViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                // Check if a contact with the same FirstName and LastName already exists
-                if (_context.Contacts.Any(c => c.FirstName == contact.FirstName && c.LastName == contact.LastName))
+                var contact = new Contact
                 {
-                    ModelState.AddModelError(string.Empty, "A contact with the same name already exists.");
-                    ViewData["AddressId"] = new SelectList(_context.Addresses, "AddressId", "City", contact.AddressId);
-                    return View(contact);
-                }
+                    FirstName = viewModel.FirstName,
+                    LastName = viewModel.LastName,
+                    Addresses = viewModel.Addresses.Select(a => new Address
+                    {
+                        Street = a.Street,
+                        City = a.City,
+                        State = a.State,
+                        PostalCode = a.PostalCode
+                    }).ToList()
+                };
 
-                // Check if the address already exists
-                var existingAddress = await _context.Addresses.FirstOrDefaultAsync(a =>
-                    a.Street == contact.Address.Street &&
-                    a.City == contact.Address.City &&
-                    a.State == contact.Address.State &&
-                    a.PostalCode == contact.Address.PostalCode);
-
-                if (existingAddress != null)
-                {
-                    // Use the existing address
-                    contact.AddressId = existingAddress.AddressId;
-                    contact.Address = null; // Set the Address navigation property to null to avoid creating a new address
-                }
-                else
-                {
-                    // Add the new address
-                    _context.Addresses.Add(contact.Address);
-                    await _context.SaveChangesAsync();
-                    contact.AddressId = contact.Address.AddressId;
-                }
-
-                // Add the contact
                 _context.Add(contact);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AddressId"] = new SelectList(_context.Addresses, "AddressId", "City", contact.AddressId);
-            return View(contact);
+
+            return View(viewModel);
         }
 
         // GET: Contacts/Edit/5
@@ -120,74 +101,84 @@ namespace ContactManager.Web.Controllers
             }
 
             var contact = await _context.Contacts
-                                        .Include(c => c.Address)
+                                        .Include(c => c.Addresses)
                                         .FirstOrDefaultAsync(m => m.ContactId == id);
             if (contact == null)
             {
                 return NotFound();
             }
 
-            return View(contact);
+            var viewModel = new ContactViewModel
+            {
+                Id = contact.ContactId,
+                FirstName = contact.FirstName,
+                LastName = contact.LastName,
+                Addresses = contact.Addresses.Select(a => new AddressViewModel
+                {
+                    Id = a.AddressId,
+                    Street = a.Street,
+                    City = a.City,
+                    State = a.State,
+                    PostalCode = a.PostalCode
+                }).ToList()
+            };
+
+            return View(viewModel);
         }
+
 
         // POST: Contacts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ContactId,FirstName,LastName,Address")] Contact contact)
+        public async Task<IActionResult> Edit(int id, ContactViewModel viewModel)
         {
-            if (id != contact.ContactId)
+            if (id != viewModel.Id)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
-                // Check if a contact with the same FirstName and LastName already exists, excluding the current contact being edited
-                if (_context.Contacts.Any(c => c.FirstName == contact.FirstName && c.LastName == contact.LastName && c.ContactId != contact.ContactId))
+                var contactToUpdate = await _context.Contacts
+                    .Include(c => c.Addresses)
+                    .FirstOrDefaultAsync(c => c.ContactId == id);
+
+                if (contactToUpdate == null)
                 {
-                    ModelState.AddModelError(string.Empty, "A contact with the same name already exists.");
-                    return View(contact);
+                    return NotFound();
+                }
+
+                // Update contact properties
+                contactToUpdate.FirstName = viewModel.FirstName;
+                contactToUpdate.LastName = viewModel.LastName;
+
+                //add new ones
+                foreach (var addressViewModel in viewModel.Addresses.Where(a => !a.Delete))
+                {
+                    if (addressViewModel.Id <= 0)
+                    {
+                        // Add new address
+                        var newAddress = new Address
+                        {
+                            Street = addressViewModel.Street,
+                            City = addressViewModel.City,
+                            State = addressViewModel.State,
+                            PostalCode = addressViewModel.PostalCode,
+                            ContactId = contactToUpdate.ContactId
+                        };
+                        contactToUpdate.Addresses.Add(newAddress);
+                    }
                 }
 
                 try
                 {
-                    // Check if the new address already exists
-                    var existingAddress = await _context.Addresses.FirstOrDefaultAsync(a =>
-                        a.Street == contact.Address.Street &&
-                        a.City == contact.Address.City &&
-                        a.State == contact.Address.State &&
-                        a.PostalCode == contact.Address.PostalCode);
-
-                    if (existingAddress != null)
-                    {
-                        // Use the existing address
-                        contact.AddressId = existingAddress.AddressId;
-                        contact.Address = null; // Set the Address navigation property to null to avoid creating a new address
-                    }
-                    else
-                    {
-                        // Add the new address only once
-                        var newAddress = new Address
-                        {
-                            Street = contact.Address.Street,
-                            City = contact.Address.City,
-                            State = contact.Address.State,
-                            PostalCode = contact.Address.PostalCode
-                        };
-                        _context.Addresses.Add(newAddress);
-                        await _context.SaveChangesAsync();
-                        contact.AddressId = newAddress.AddressId;
-                    }
-
-                    // Update the contact
-                    _context.Update(contact);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ContactExists(contact.ContactId))
+                    if (!ContactExists(contactToUpdate.ContactId))
                     {
                         return NotFound();
                     }
@@ -196,10 +187,11 @@ namespace ContactManager.Web.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
 
-            return View(contact);
+            return View(viewModel);
         }
 
         // GET: Contacts/Delete/5
@@ -211,7 +203,7 @@ namespace ContactManager.Web.Controllers
             }
 
             var contact = await _context.Contacts
-                .Include(c => c.Address)
+                .Include(c => c.Addresses)
                 .FirstOrDefaultAsync(m => m.ContactId == id);
             if (contact == null)
             {
@@ -235,14 +227,60 @@ namespace ContactManager.Web.Controllers
             {
                 _context.Contacts.Remove(contact);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ContactExists(int id)
         {
-          return (_context.Contacts?.Any(e => e.ContactId == id)).GetValueOrDefault();
+            return (_context.Contacts?.Any(e => e.ContactId == id)).GetValueOrDefault();
         }
+        [HttpPost]
+        public async Task<IActionResult> DeleteAddress(int addressId)
+        {
+            var address = await _context.Addresses.FindAsync(addressId);
+            if (address != null)
+            {
+                _context.Addresses.Remove(address);
+                await _context.SaveChangesAsync();
+                return Json(new { success = true });
+            }
+            return Json(new { success = false });
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateAddress(int addressId, AddressViewModel addressViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var address = await _context.Addresses.FindAsync(addressId);
+                if (address != null)
+                {
+                    // Remove the existing address
+                    _context.Addresses.Remove(address);
+                    await _context.SaveChangesAsync();
+
+                    // Add a delay to ensure deletion is completed
+                    await Task.Delay(100); // Delay in milliseconds
+
+                    // Create and add the new address
+                    var newAddress = new Address
+                    {
+                        Street = addressViewModel.Street,
+                        City = addressViewModel.City,
+                        State = addressViewModel.State,
+                        PostalCode = addressViewModel.PostalCode,
+                        ContactId = address.ContactId // Maintain the same ContactId
+                    };
+                    _context.Addresses.Add(newAddress);
+                    await _context.SaveChangesAsync();
+
+                    return Json(new { success = true });
+                }
+            }
+            return Json(new { success = false, errors = ModelState.Values.SelectMany(v => v.Errors) });
+        }
+
+
     }
 }

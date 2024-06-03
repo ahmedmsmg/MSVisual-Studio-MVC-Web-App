@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ContactManager.Data.Models
 {
@@ -18,5 +19,10 @@ namespace ContactManager.Data.Models
 
         [Required]
         public string PostalCode { get; set; }
+
+        public int ContactId { get; set; } // Foreign key
+
+        [ForeignKey(nameof(ContactId))]
+        public Contact Contact { get; set; }
     }
 }

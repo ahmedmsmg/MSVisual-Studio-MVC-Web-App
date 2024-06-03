@@ -33,6 +33,9 @@ namespace ContactManager.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ContactId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PostalCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -47,7 +50,38 @@ namespace ContactManager.Data.Migrations
 
                     b.HasKey("AddressId");
 
+                    b.HasIndex("ContactId");
+
                     b.ToTable("Addresses");
+
+                    b.HasData(
+                        new
+                        {
+                            AddressId = 1,
+                            City = "Anytown",
+                            ContactId = 1,
+                            PostalCode = "12345",
+                            State = "AN",
+                            Street = "123 Main St"
+                        },
+                        new
+                        {
+                            AddressId = 2,
+                            City = "Othertown",
+                            ContactId = 2,
+                            PostalCode = "67890",
+                            State = "OT",
+                            Street = "456 Oak St"
+                        },
+                        new
+                        {
+                            AddressId = 3,
+                            City = "Sometown",
+                            ContactId = 1,
+                            PostalCode = "11223",
+                            State = "ST",
+                            Street = "789 Pine St"
+                        });
                 });
 
             modelBuilder.Entity("ContactManager.Data.Models.Contact", b =>
@@ -57,9 +91,6 @@ namespace ContactManager.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactId"));
-
-                    b.Property<int>("AddressId")
-                        .HasColumnType("int");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -71,20 +102,37 @@ namespace ContactManager.Data.Migrations
 
                     b.HasKey("ContactId");
 
-                    b.HasIndex("AddressId");
-
                     b.ToTable("Contacts");
+
+                    b.HasData(
+                        new
+                        {
+                            ContactId = 1,
+                            FirstName = "Sayed",
+                            LastName = "Ghoneim"
+                        },
+                        new
+                        {
+                            ContactId = 2,
+                            FirstName = "Mohamed",
+                            LastName = "Ghoneim"
+                        });
+                });
+
+            modelBuilder.Entity("ContactManager.Data.Models.Address", b =>
+                {
+                    b.HasOne("ContactManager.Data.Models.Contact", "Contact")
+                        .WithMany("Addresses")
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Contact");
                 });
 
             modelBuilder.Entity("ContactManager.Data.Models.Contact", b =>
                 {
-                    b.HasOne("ContactManager.Data.Models.Address", "Address")
-                        .WithMany()
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Address");
+                    b.Navigation("Addresses");
                 });
 #pragma warning restore 612, 618
         }

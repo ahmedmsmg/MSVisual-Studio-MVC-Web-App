@@ -1,6 +1,5 @@
 ﻿using ContactManager.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Collections.Generic;
 
 namespace ContactManager.Data
@@ -21,76 +20,108 @@ namespace ContactManager.Data
 
             // Configure relationships
             modelBuilder.Entity<Contact>()
-                .HasOne(c => c.Address)
-                .WithMany()
-                .HasForeignKey(c => c.AddressId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasMany(c => c.Addresses)
+                .WithOne(a => a.Contact)
+                .HasForeignKey(a => a.ContactId);
+
+            // Seed data for Contact
+            modelBuilder.Entity<Contact>().HasData(
+                new Contact
+                {
+                    ContactId = 1,
+                    FirstName = "Sayed",
+                    LastName = "Ghoneim"
+                },
+                new Contact
+                {
+                    ContactId = 2,
+                    FirstName = "Mohamed",
+                    LastName = "Ghoneim"
+                }
+            );
+
+            // Seed data for Address
+            modelBuilder.Entity<Address>().HasData(
+                new Address
+                {
+                    AddressId = 1,
+                    Street = "123 Main St",
+                    City = "Anytown",
+                    State = "AN",
+                    PostalCode = "12345",
+                    ContactId = 1
+                },
+                new Address
+                {
+                    AddressId = 2,
+                    Street = "456 Oak St",
+                    City = "Othertown",
+                    State = "OT",
+                    PostalCode = "67890",
+                    ContactId = 2
+                },
+                new Address
+                {
+                    AddressId = 3,
+                    Street = "789 Pine St",
+                    City = "Sometown",
+                    State = "ST",
+                    PostalCode = "11223",
+                    ContactId = 1
+                }
+            );
         }
 
         public void SeedData()
         {
-            var seedAddresses = new List<Address>
+            if (!Contacts.Any())
             {
-                new Address
-                {
-                    Street = "123 Main St",
-                    City = "Anytown",
-                    State = "AN",
-                    PostalCode = "12345"
-                },
-                new Address
-                {
-                    Street = "456 Oak St",
-                    City = "Othertown",
-                    State = "OT",
-                    PostalCode = "67890"
-                }
-            };
+                Contacts.AddRange(
+                    new Contact
+                    {
+                        ContactId = 1,
+                        FirstName = "Sayed",
+                        LastName = "Ghoneim",
+                        Addresses = new List<Address>
+                        {
+                            new Address
+                            {
+                                AddressId = 1,
+                                Street = "123 Main St",
+                                City = "Anytown",
+                                State = "AN",
+                                PostalCode = "12345"
+                            },
+                            new Address
+                            {
+                                AddressId = 3,
+                                Street = "789 Pine St",
+                                City = "Sometown",
+                                State = "ST",
+                                PostalCode = "11223"
+                            }
+                        }
+                    },
+                    new Contact
+                    {
+                        ContactId = 2,
+                        FirstName = "Mohamed",
+                        LastName = "Ghoneim",
+                        Addresses = new List<Address>
+                        {
+                            new Address
+                            {
+                                AddressId = 2,
+                                Street = "456 Oak St",
+                                City = "Othertown",
+                                State = "OT",
+                                PostalCode = "67890"
+                            }
+                        }
+                    }
+                );
 
-            var seedContacts = new List<Contact>
-            {
-                new Contact
-                {
-                    FirstName = "Sayed",
-                    LastName = "Ghoneim",
-                    Address = GetOrCreateAddress(seedAddresses.First(a => a.Street == "123 Main St"))
-                },
-                new Contact
-                {
-                    FirstName = "Mohamed",
-                    LastName = "Ghoneim",
-                    Address = GetOrCreateAddress(seedAddresses.First(a => a.Street == "456 Oak St"))
-                }
-            };
-
-            // Seed contacts
-            foreach (var contact in seedContacts)
-            {
-                if (!Contacts.Any(c => c.FirstName == contact.FirstName && c.LastName == contact.LastName))
-                {
-                    Contacts.Add(contact);
-                }
-            }
-            SaveChanges();
-        }
-
-        private Address GetOrCreateAddress(Address seedAddress)
-        {
-            var existingAddress = Addresses.FirstOrDefault(a =>
-                a.Street == seedAddress.Street &&
-                a.City == seedAddress.City &&
-                a.State == seedAddress.State &&
-                a.PostalCode == seedAddress.PostalCode);
-
-            if (existingAddress != null)
-            {
-                return existingAddress;
-            }
-            else
-            {
-                Addresses.Add(seedAddress);
                 SaveChanges();
-                return seedAddress;
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace ContactManager.Data.Models
 {
@@ -14,9 +15,6 @@ namespace ContactManager.Data.Models
         [Required]
         public string LastName { get; set; }
 
-        public int AddressId { get; set; } // Foreign key
-
-        [ForeignKey(nameof(AddressId))]
-        public Address Address { get; set; }
+        public ICollection<Address> Addresses { get; set; } = new List<Address>(); // Navigation property for one-to-many relationship
     }
 }

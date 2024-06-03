@@ -1,12 +1,408 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\contacts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\contacts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.data\\contactmanagercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|solutionrelative:contactmanager.data\\contactmanagercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\viewmodels\\contactviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\viewmodels\\contactviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\contacts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\contacts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.data\\migrations\\contactmanagercontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|solutionrelative:contactmanager.data\\migrations\\contactmanagercontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.data\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|solutionrelative:contactmanager.data\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\contacts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\contacts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.data\\contactmanagercontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|solutionrelative:contactmanager.data\\contactmanagercontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.data\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|solutionrelative:contactmanager.data\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\contacts\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\contacts\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\contactmanager.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\contactmanager.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.data\\migrations\\20240521001027_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|solutionrelative:contactmanager.data\\migrations\\20240521001027_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.web\\views\\contacts\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{051190B2-293C-4F4A-9432-EEB6B5804C42}|ContactManager.Web\\ContactManager.Web.csproj|solutionrelative:contactmanager.web\\views\\contacts\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|c:\\users\\ahmed.000\\source\\repos\\ahmedmsmg\\msvisual-studio-mvc-web-app\\contactmanager\\contactmanager.data\\repositories\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED268210-4243-4CBD-8513-E200FC729B19}|ContactManager.Data\\ContactManager.Data.csproj|solutionrelative:contactmanager.data\\repositories\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ContactManagerContext.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\ContactManagerContext.cs",
+              "RelativeDocumentMoniker": "ContactManager.Data\\ContactManagerContext.cs",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\ContactManagerContext.cs",
+              "RelativeToolTip": "ContactManager.Data\\ContactManagerContext.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAcwIAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T17:22:28.797Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Contacts\\Edit.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\Contacts\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Contacts\\Edit.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\Contacts\\Edit.cshtml",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAIwIMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-20T23:43:50.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ContactsController.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Controllers\\ContactsController.cs",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Controllers\\ContactsController.cs",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Controllers\\ContactsController.cs",
+              "RelativeToolTip": "ContactManager.Web\\Controllers\\ContactsController.cs",
+              "ViewState": "AQIAAPkAAAAAAAAAAAAQwBkBAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T23:11:43.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ContactViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\ViewModels\\ContactViewModel.cs",
+              "RelativeDocumentMoniker": "ContactManager.Web\\ViewModels\\ContactViewModel.cs",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\ViewModels\\ContactViewModel.cs",
+              "RelativeToolTip": "ContactManager.Web\\ViewModels\\ContactViewModel.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAA2wB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T20:47:34.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Contacts\\Details.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\Contacts\\Details.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Contacts\\Details.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\Contacts\\Details.cshtml",
+              "ViewState": "AQIAABEAAAAAAAAAAAAkwCcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-20T23:42:53.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ContactManagerContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\Migrations\\ContactManagerContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "ContactManager.Data\\Migrations\\ContactManagerContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\Migrations\\ContactManagerContextModelSnapshot.cs",
+              "RelativeToolTip": "ContactManager.Data\\Migrations\\ContactManagerContextModelSnapshot.cs",
+              "ViewState": "AQIAAHwAAAAAAAAAAAAgwIEAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T21:57:52.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Contact.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\Models\\Contact.cs",
+              "RelativeDocumentMoniker": "ContactManager.Data\\Models\\Contact.cs",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\Models\\Contact.cs",
+              "RelativeToolTip": "ContactManager.Data\\Models\\Contact.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T17:20:04.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ContactManager.Web\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T18:43:21.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Program.cs",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Program.cs",
+              "RelativeToolTip": "ContactManager.Web\\Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAowC4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T23:32:48.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-25T21:28:42.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Contacts\\Index.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\Contacts\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Contacts\\Index.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\Contacts\\Index.cshtml",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAEgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-20T23:24:03.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-25T21:28:40.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-20T23:24:00.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-22T18:43:31.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ContactManagerContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\ContactManagerContextFactory.cs",
+              "RelativeDocumentMoniker": "ContactManager.Data\\ContactManagerContextFactory.cs",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\ContactManagerContextFactory.cs",
+              "RelativeToolTip": "ContactManager.Data\\ContactManagerContextFactory.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T17:22:54.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Address.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\Models\\Address.cs",
+              "RelativeDocumentMoniker": "ContactManager.Data\\Models\\Address.cs",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\Models\\Address.cs",
+              "RelativeToolTip": "ContactManager.Data\\Models\\Address.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAABwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T17:20:24.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ContactManager.Web.csproj",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\ContactManager.Web.csproj",
+              "RelativeDocumentMoniker": "ContactManager.Web\\ContactManager.Web.csproj",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\ContactManager.Web.csproj",
+              "RelativeToolTip": "ContactManager.Web\\ContactManager.Web.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-23T20:46:56.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Contacts\\Create.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\Contacts\\Create.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Contacts\\Create.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\Contacts\\Create.cshtml",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAkwF4AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-20T23:36:55.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "20240521001027_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\Migrations\\20240521001027_InitialCreate.cs",
+              "RelativeDocumentMoniker": "ContactManager.Data\\Migrations\\20240521001027_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\Migrations\\20240521001027_InitialCreate.cs",
+              "RelativeToolTip": "ContactManager.Data\\Migrations\\20240521001027_InitialCreate.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAmwFcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T00:10:27.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-22T18:43:37.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-22T18:43:30.018Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-22T18:43:35.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Contacts\\Delete.cshtml",
+              "RelativeDocumentMoniker": "ContactManager.Web\\Views\\Contacts\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Web\\Views\\Contacts\\Delete.cshtml",
+              "RelativeToolTip": "ContactManager.Web\\Views\\Contacts\\Delete.cshtml",
+              "ViewState": "AQIAABQAAAAAAAAAAAAkwCoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-20T23:41:35.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ContactRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\Repositories\\ContactRepository.cs",
+              "RelativeDocumentMoniker": "ContactManager.Data\\Repositories\\ContactRepository.cs",
+              "ToolTip": "C:\\Users\\ahmed.000\\source\\repos\\ahmedmsmg\\MSVisual-Studio-MVC-Web-App\\ContactManager\\ContactManager.Data\\Repositories\\ContactRepository.cs",
+              "RelativeToolTip": "ContactManager.Data\\Repositories\\ContactRepository.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAowDMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T23:36:10.4Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
