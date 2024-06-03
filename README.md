@@ -56,7 +56,7 @@ Usage
 Run the application:
 
 dotnet run --project ContactManager.Web
-Open a browser and navigate to https://localhost:5001 to view the application.
+Open a browser and navigate to https://localhost:7228 to view the application.
 
 # Managing Contacts
 To create a new contact, click on the "Create New" button, fill out the form, and submit.
