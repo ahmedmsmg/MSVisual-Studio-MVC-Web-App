@@ -154,7 +154,7 @@ namespace ContactManager.Web.Controllers
                 contactToUpdate.FirstName = viewModel.FirstName;
                 contactToUpdate.LastName = viewModel.LastName;
 
-                //add new ones
+                
                 foreach (var addressViewModel in viewModel.Addresses.Where(a => !a.Delete))
                 {
                     if (addressViewModel.Id <= 0)
@@ -248,31 +248,19 @@ namespace ContactManager.Web.Controllers
             }
             return Json(new { success = false });
         }
-        [HttpPost]
-        public async Task<IActionResult> UpdateAddress(int addressId, AddressViewModel addressViewModel)
+        public async Task<IActionResult> UpdateAddress([FromBody] AddressViewModel addressViewModel)
         {
             if (ModelState.IsValid)
             {
-                var address = await _context.Addresses.FindAsync(addressId);
+                var address = await _context.Addresses.FindAsync(addressViewModel.Id);
                 if (address != null)
                 {
-                    // Remove the existing address
-                    _context.Addresses.Remove(address);
-                    await _context.SaveChangesAsync();
+                    address.Street = addressViewModel.Street;
+                    address.City = addressViewModel.City;
+                    address.State = addressViewModel.State;
+                    address.PostalCode = addressViewModel.PostalCode;
 
-                    // Add a delay to ensure deletion is completed
-                    await Task.Delay(100); // Delay in milliseconds
-
-                    // Create and add the new address
-                    var newAddress = new Address
-                    {
-                        Street = addressViewModel.Street,
-                        City = addressViewModel.City,
-                        State = addressViewModel.State,
-                        PostalCode = addressViewModel.PostalCode,
-                        ContactId = address.ContactId // Maintain the same ContactId
-                    };
-                    _context.Addresses.Add(newAddress);
+                    _context.Update(address);
                     await _context.SaveChangesAsync();
 
                     return Json(new { success = true });
@@ -280,6 +268,7 @@ namespace ContactManager.Web.Controllers
             }
             return Json(new { success = false, errors = ModelState.Values.SelectMany(v => v.Errors) });
         }
+
 
 
     }

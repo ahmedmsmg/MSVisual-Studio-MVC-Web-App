@@ -29,7 +29,7 @@
                 <hr />
                 @for (var i = 0; i < addressList.Count; i++)
                 {
-                    <div class="form-group address-group" id="address-@addressList[i].Id">
+                    <div class="form-group address-group" id="address-@i">
                         <input type="hidden" asp-for="@addressList[i].Id" />
                         <label asp-for="@addressList[i].Street" class="control-label">Street</label>
                         <input asp-for="@addressList[i].Street" class="form-control" />
@@ -47,7 +47,7 @@
                         <input asp-for="@addressList[i].PostalCode" class="form-control" />
                         <span asp-validation-for="@addressList[i].PostalCode" class="text-danger"></span>
 
-                        <button type="button" class="btn btn-secondary" onclick="updateAddress(@addressList[i].Id, @i)">Update Address</button>
+                        <button type="button" class="btn btn-secondary" onclick="confirmUpdateAddress(@i, @addressList[i].Id)">Update Address</button>
                         <button type="button" class="btn btn-danger" onclick="deleteAddress(@addressList[i].Id)">Delete Address</button>
                     </div>
                 }
@@ -77,50 +77,87 @@
 
         function addAddress() {
             var newAddressHtml = `
-                                        <div class="form-group address-group" id="address-${addressIndex}">
-                                            <input type="hidden" name="Addresses.Index" value="${addressIndex}" />
-                                            <label for="Addresses_${addressIndex}__Street" class="control-label">Street</label>
-                                            <input id="Addresses_${addressIndex}__Street" name="Addresses[${addressIndex}].Street" class="form-control" />
-                                            <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].Street" data-valmsg-replace="true"></span>
+                    <div class="form-group address-group" id="address-${addressIndex}">
+                        <input type="hidden" name="Addresses.Index" value="${addressIndex}" />
+                        <input type="hidden" id="Addresses_${addressIndex}__Id" name="Addresses[${addressIndex}].Id" value="0" />
+                        <label for="Addresses_${addressIndex}__Street" class="control-label">Street</label>
+                        <input id="Addresses_${addressIndex}__Street" name="Addresses[${addressIndex}].Street" class="form-control" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].Street" data-valmsg-replace="true"></span>
 
-                                            <label for="Addresses_${addressIndex}__City" class="control-label">City</label>
-                                            <input id="Addresses_${addressIndex}__City" name="Addresses[${addressIndex}].City" class="form-control" />
-                                            <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].City" data-valmsg-replace="true"></span>
+                        <label for="Addresses_${addressIndex}__City" class="control-label">City</label>
+                        <input id="Addresses_${addressIndex}__City" name="Addresses[${addressIndex}].City" class="form-control" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].City" data-valmsg-replace="true"></span>
 
-                                            <label for="Addresses_${addressIndex}__State" class="control-label">State</label>
-                                            <input id="Addresses_${addressIndex}__State" name="Addresses[${addressIndex}].State" class="form-control" />
-                                            <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].State" data-valmsg-replace="true"></span>
+                        <label for="Addresses_${addressIndex}__State" class="control-label">State</label>
+                        <input id="Addresses_${addressIndex}__State" name="Addresses[${addressIndex}].State" class="form-control" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].State" data-valmsg-replace="true"></span>
 
-                                            <label for="Addresses_${addressIndex}__PostalCode" class="control-label">Postal Code</label>
-                                            <input id="Addresses_${addressIndex}__PostalCode" name="Addresses[${addressIndex}].PostalCode" class="form-control" />
-                                            <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].PostalCode" data-valmsg-replace="true"></span>
+                        <label for="Addresses_${addressIndex}__PostalCode" class="control-label">Postal Code</label>
+                        <input id="Addresses_${addressIndex}__PostalCode" name="Addresses[${addressIndex}].PostalCode" class="form-control" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${addressIndex}].PostalCode" data-valmsg-replace="true"></span>
 
-                                            <button type="button" class="btn btn-secondary" onclick="updateAddress(${addressIndex}, ${addressIndex})">Update Address</button>
-                                            <button type="button" class="btn btn-danger" onclick="deleteAddress(${addressIndex})">Delete Address</button>
-                                        </div>
-                                    `;
+                        <button type="button" class="btn btn-secondary" onclick="updateAddress(${addressIndex})">Save Address</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteAddress(${addressIndex})">Delete Address</button>
+                    </div>
+                `;
             $('#addresses').append(newAddressHtml);
             addressIndex++;
         }
 
-        function updateAddress(id, index) {
+        function confirmUpdateAddress(index, addressId) {
+            if (confirm('Are you sure you want to update this address?')) {
+                $('#address-' + index).remove();
+                showUpdateAddressFields(index, addressId);
+            }
+        }
+
+        function showUpdateAddressFields(index, addressId) {
+            var updateAddressHtml = `
+                    <div class="form-group address-group" id="update-address-${index}">
+                        <input type="hidden" id="UpdateAddresses_${index}__Id" value="${addressId}" />
+                        <label for="UpdateAddresses_${index}__Street" class="control-label">Street</label>
+                        <input id="UpdateAddresses_${index}__Street" class="form-control" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="UpdateAddresses[${index}].Street" data-valmsg-replace="true"></span>
+
+                        <label for="UpdateAddresses_${index}__City" class="control-label">City</label>
+                        <input id="UpdateAddresses_${index}__City" class="form-control" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="UpdateAddresses[${index}].City" data-valmsg-replace="true"></span>
+
+                        <label for="UpdateAddresses_${index}__State" class="control-label">State</label>
+                        <input id="UpdateAddresses_${index}__State" class="form-control" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="UpdateAddresses[${index}].State" data-valmsg-replace="true"></span>
+
+                        <label for="UpdateAddresses_${index}__PostalCode" class="control-label">Postal Code</label>
+                        <input id="UpdateAddresses_${index}__PostalCode" class="form-control" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="UpdateAddresses[${index}].PostalCode" data-valmsg-replace="true"></span>
+
+                        <button type="button" class="btn btn-primary" onclick="saveUpdatedAddress(${index})">Save</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteAddress(${addressId})">Delete Address</button>
+                    </div>
+                `;
+            $('#addresses').append(updateAddressHtml);
+        }
+
+        function saveUpdatedAddress(index) {
             var address = {
-                Id: id,
-                Street: $('#Addresses_' + index + '__Street').val(),
-                City: $('#Addresses_' + index + '__City').val(),
-                State: $('#Addresses_' + index + '__State').val(),
-                PostalCode: $('#Addresses_' + index + '__PostalCode').val()
+                Id: $('#UpdateAddresses_' + index + '__Id').val(),
+                Street: $('#UpdateAddresses_' + index + '__Street').val(),
+                City: $('#UpdateAddresses_' + index + '__City').val(),
+                State: $('#UpdateAddresses_' + index + '__State').val(),
+                PostalCode: $('#UpdateAddresses_' + index + '__PostalCode').val()
             };
 
             $.ajax({
                 url: '@Url.Action("UpdateAddress", "Contacts")',
                 type: 'POST',
-                data: JSON.stringify({ addressId: id, addressViewModel: address }),
+                data: JSON.stringify(address),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (result) {
                     if (result.success) {
                         alert('Address updated successfully.');
+                        $('#update-address-' + index).remove();
+                        addUpdatedAddressToList(address, index);
                     } else {
                         alert('Failed to update address.');
                     }
@@ -131,6 +168,33 @@
             });
         }
 
+        function addUpdatedAddressToList(address, index) {
+            var updatedAddressHtml = `
+                    <div class="form-group address-group" id="address-${index}">
+                        <input type="hidden" name="Addresses.Index" value="${index}" />
+                        <input type="hidden" id="Addresses_${index}__Id" name="Addresses[${index}].Id" value="${address.Id}" />
+                        <label for="Addresses_${index}__Street" class="control-label">Street</label>
+                        <input id="Addresses_${index}__Street" name="Addresses[${index}].Street" class="form-control" value="${address.Street}" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${index}].Street" data-valmsg-replace="true"></span>
+
+                        <label for="Addresses_${index}__City" class="control-label">City</label>
+                        <input id="Addresses_${index}__City" name="Addresses[${index}].City" class="form-control" value="${address.City}" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${index}].City" data-valmsg-replace="true"></span>
+
+                        <label for="Addresses_${index}__State" class="control-label">State</label>
+                        <input id="Addresses_${index}__State" name="Addresses[${index}].State" class="form-control" value="${address.State}" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${index}].State" data-valmsg-replace="true"></span>
+
+                        <label for="Addresses_${index}__PostalCode" class="control-label">Postal Code</label>
+                        <input id="Addresses_${index}__PostalCode" name="Addresses[${index}].PostalCode" class="form-control" value="${address.PostalCode}" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Addresses[${index}].PostalCode" data-valmsg-replace="true"></span>
+
+                        <button type="button" class="btn btn-secondary" onclick="confirmUpdateAddress(${index}, ${address.Id})">Update Address</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteAddress(${address.Id})">Delete Address</button>
+                    </div>
+                `;
+            $('#addresses').append(updatedAddressHtml);
+        }
 
         function deleteAddress(id) {
             if (confirm('Are you sure you want to delete this address?')) {
@@ -152,4 +216,5 @@
             }
         }
     </script>
+
 }

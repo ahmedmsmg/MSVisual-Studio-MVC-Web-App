@@ -11,7 +11,7 @@ namespace ContactManager.Data
         {
             var optionsBuilder = new DbContextOptionsBuilder<ContactManagerContext>();
 
-            // Adjust the path as necessary to locate the appsettings.json in the ContactManager.Web project
+            // locate the appsettings.json in the ContactManager.Web project
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../ContactManager.Web"))
                 .AddJsonFile("appsettings.json")
